@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Leaflet CSS fixes */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Leaflet Draw CSS overrides */
+.leaflet-draw-toolbar {
+  margin-top: 10px !important;
+}
+
+.leaflet-draw-toolbar a {
+  background-color: #fff !important;
+  border: 2px solid #ccc !important;
+  border-radius: 4px !important;
+  width: 26px !important;
+  height: 26px !important;
+}
+
+.leaflet-draw-toolbar a:hover {
+  background-color: #f0f0f0 !important;
+  border-color: #3b82f6 !important;
+}
+
+/* Custom drawing styles */
+.leaflet-draw-tooltip {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  color: white !important;
+  font-size: 12px !important;
+  padding: 4px 8px !important;
+}
+
+.leaflet-draw-tooltip:before {
+  border-top-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Ensure proper z-index for map controls */
+.leaflet-control-container {
+  z-index: 1000;
+}
+
+.leaflet-control-zoom {
+  z-index: 1001 !important;
+}
+
+.leaflet-draw {
+  z-index: 1001 !important;
+}
+
+/* Custom styles for drawn objects */
+.leaflet-interactive {
+  cursor: pointer;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Förbättrade polyline-markörer */
+.leaflet-editing-icon {
+  background: #fff !important;
+  border: 2px solid #f87171 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+.leaflet-touch-icon {
+  background: #fff !important;
+  border: 3px solid #f87171 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3) !important;
+}
+
+/* Förbättrad polyline-ritning */
+.leaflet-draw-guide-dash {
+  stroke-dasharray: 5,5 !important;
+  stroke: #f87171 !important;
+  stroke-width: 2 !important;
+  opacity: 0.8 !important;
+}
+
+/* Polyline vertex markers */
+.leaflet-vertex-icon {
+  background: #fff !important;
+  border: 2px solid #f87171 !important;
+  border-radius: 50% !important;
+  width: 8px !important;
+  height: 8px !important;
+  margin-left: -4px !important;
+  margin-top: -4px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3) !important;
+}
+
+.leaflet-vertex-icon:hover {
+  background: #f87171 !important;
+  border-color: #dc2626 !important;
+}
+
+/* House visit marker styles */
+.house-visit-marker {
+  z-index: 1000 !important;
+}
+
+.house-visit-popup .leaflet-popup-content-wrapper {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+.house-visit-popup .leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.house-visit-popup .leaflet-popup-tip {
+  background: white !important;
+  border: none !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* Minimap specific styles */
+.minimap-container .leaflet-container {
+  border-radius: 8px;
+}
+
+.minimap-marker {
+  z-index: 1000 !important;
+}
+
+/* Minimap attribution control - hide it for cleaner look */
+.minimap-container .leaflet-control-attribution {
+  display: none !important;
+}
+
+/* Minimap zoom control - hide it since we disable interactions */
+.minimap-container .leaflet-control-zoom {
+  display: none !important;
+}
+
+/* Ensure minimap doesn't interfere with main map */
+.minimap-container .leaflet-container {
+  cursor: default !important;
+}
+
+/* Drawing control icons - improved visibility */
+.leaflet-draw-draw-polygon {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgM0wxNyAzTDE3IDE3TDMgMTdMMTAgMTBMMyAzWiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz4KPC9zdmc+') !important;
+  background-size: 16px 16px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.leaflet-draw-draw-rectangle {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMyIgeT0iMyIgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4=') !important;
+  background-size: 16px 16px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.leaflet-draw-draw-circle {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iNyIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz4KPC9zdmc+') !important;
+  background-size: 16px 16px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.leaflet-draw-draw-polyline {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgM0w4IDhMMTIgNEwxNyAxNyIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz4KPC9zdmc+') !important;
+  background-size: 16px 16px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.leaflet-draw-draw-marker {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwIDJDNy4yNCAyIDUgNC4yNCA1IDdDNSAxMS4yNSAxMCAxOCAxMCAxOEMxMCAxOCAxNSAxMS4yNSAxNSA3QzE1IDQuMjQgMTIuNzYgMiAxMCAyWk0xMCA5QzguODkgOSA4IDguMTEgOCA3QzggNS44OSA4Ljg5IDUgMTAgNUMxMS4xMSA1IDEyIDUuODkgMTIgN0MxMiA4LjExIDExLjExIDkgMTAgOVoiIGZpbGw9IiMzMzMiLz4KPC9zdmc+') !important;
+  background-size: 16px 16px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.leaflet-draw-edit-edit {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0IDZMMTQgMTRMNiAxNEw2IDZMMTQgNloiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIi8+CjxwYXRoIGQ9Ik0xNiA0TDE2IDJMMTggMkwxOCA0TDE2IDRaIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4=') !important;
+  background-size: 16px 16px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.leaflet-draw-edit-remove {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYgNkwxNCAxNE02IDE0TDE0IDYiIHN0cm9rZT0iI2RjMjYyNiIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPg==') !important;
+  background-size: 16px 16px !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Ensure drawing controls are visible */
+.leaflet-draw-section {
+  margin-bottom: 5px !important;
+}
+
+.leaflet-draw-toolbar-top {
+  margin-top: 0 !important;
+}
